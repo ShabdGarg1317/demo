@@ -1,121 +1,136 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-    background-color: #f8fafc;
+body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
 }
 
-/* header container */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.8rem 2.5rem;
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    gap: 1.5rem;
+/* Main Box */
+.chat-container {
+  width: 100%;
+  max-width: 650px;
+  height: 80vh;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* logo */
-.logo {
-    color: #2563eb;
-    font-size: 1.5rem;
-     font-weight: 700;
-}  
-
-/* navlinks */
-.nav-links {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 1.5rem;
+/* Header */
+.chat-header {
+  padding: 1rem 1.25rem;
+  background-color: #0f172a;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: #1f2937;
-    font-weight: 700;
-    transition: color 0.3s ease;
-}
-.nav-links a:hover {
-    color: rgb(89, 86, 86);
-}
- 
-/* search bar */
-.search{
-    display: flex;
-    align-items: center;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #f8fafc;
-
-}
-.search input{
-    border: none;
-    outline: none;
-    padding: 0.45rem 0.75rem;
-    background: transparent;
-    font-size: 0.9rem;
-    background: transparent;
-    width: 200px;
+.chat-header h2 {
+  font-size: 1.1rem;
+  color: #f8fafc;
 }
 
-.search button{
-    border: none;
-    outline: none;
-    padding: 0.45rem 0.75rem;
-    background-color: #2563eb;
-    color: #ffffff;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
+.status-badge {
+  font-size: 0.75rem;
+  background-color: #0369a1;
+  color: #e0f2fe;
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
 }
 
-.search button:hover{
-    background-color: #1e40af;
+/* Messages Area */
+.chat-box {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-/* auth button */
-.auth-buttons{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+/* Base Message */
+.message {
+  max-width: 75%;
+  padding: 0.65rem 0.9rem;
+  border-radius: 8px;
+  line-height: 1.4;
+  font-size: 0.95rem;
 }
 
-.btn{
-    padding: 0.45rem 0.75rem;
-    border: none;
-    outline: none;
-    border-radius: 8px;
-    font-weight: 700;
-    transition: all 0.3s ease;
-    cursor: pointer;
-
+.message .sender {
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.2rem;
+  opacity: 0.7;
 }
 
-.log-in{
-background-color: rgb(176, 176, 176);
-    color: black    ;
-    border: none ;
-}
-.sign-in{
-    background-color: rgb(176, 176, 176);
-    color: black    ;
-    border: none ;
+/* Bot Message */
+.bot-message {
+  align-self: flex-start;
+  background-color: #334155;
+  color: #f1f5f9;
+  border-bottom-left-radius: 2px;
 }
 
-.log-in:hover{
-    background-color: rgb(159, 157, 157);
+/* User Message */
+.user-message {
+  align-self: flex-end;
+  background-color: #2563eb;
+  color: #ffffff;
+  border-bottom-right-radius: 2px;
 }
-.sign-in:hover{
-   background-color: rgb(159, 157, 157);  
+
+/* Input Form */
+.chat-input-form {
+  display: flex;
+  padding: 0.75rem;
+  background-color: #0f172a;
+  border-top: 1px solid #334155;
+  gap: 0.5rem;
+}
+
+.chat-input-form input {
+  flex: 1;
+  padding: 0.65rem 0.9rem;
+  background-color: #1e293b;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.chat-input-form input:focus {
+  border-color: #38bdf8;
+}
+
+.chat-input-form button {
+  padding: 0.65rem 1.25rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.chat-input-form button:hover {
+  background-color: #1d4ed8;
 }

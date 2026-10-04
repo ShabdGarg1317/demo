@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Testbench Baseplate</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <header class="navbar">
-        <div class="logo">My Project</div>
-        <!-- nav links -->
-        <ul class="nav-links">
-            <li class="nav-item"> <a href="#home">Home</a></li>
-            <li class="nav-item"> <a href="#about">About</a></li>
-            <li class="nav-item"> <a href="#services">Services</a></li>
-            <li class="nav-item"> <a href="#contact">Contact</a></li>
-        </ul>
-     <!-- search bar -->
-     <div class="search">
-        <form action="#" method="get">
-            <input type="text" placeholder="Search..." required>
-            <button type="submit">Search</button> </form>
-     </div>
-     <!-- sign in/log in button -->
-        <div class="auth-buttons">
-            <button class="btn sign-in">Sign In</button>
-            <button class="btn log-in">Log In</button>
-    </header>
-</body>
 
+  <main class="chat-container">
+    <!-- Header -->
+    <header class="chat-header">
+      <h2>Backend Practice with AI </h2>
+      <span class="status-badge">Ready for JS / API</span>
+    </header>
+
+    <!-- Message Display Window (Where JS will append messages) -->
+    <section class="chat-box" id="chat-box">
+      <!-- Sample Chatbot message -->
+      <div class="message bot-message">
+        <span class="sender">AI:</span>
+        <p>Hello! I am ready to test your backend responses.</p>
+      </div>
+
+      <!-- Sample User Bubble -->
+      <div class="message user-message">
+        <span class="sender">User:</span>
+        <p>This is a test prompt.</p>
+      </div>
+    </section>
+
+    <!-- Input Form (Where JS will listen to submit events) -->
+    <form class="chat-input-form" id="chat-form">
+      <input 
+        type="text" 
+        id="user-input" 
+        placeholder="Type a prompt for the AI backend..." 
+        autocomplete="off" 
+        required 
+      />
+      <button type="submit" id="send-btn">Send</button>
+    </form>
+  </main>
+
+</body>
 </html>
